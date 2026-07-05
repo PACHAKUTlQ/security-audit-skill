@@ -13,6 +13,8 @@ Explore the codebase at <path>. Answer:
 4. What comparable mainstream software exists? What security tradeoffs does the comparable accept?
 5. What's the high-level directory structure?
 Return specific file paths for key entry points.
+
+<repo intelligence tools instructions>
 ```
 
 **Agent 1b: Trust boundaries and access control**
@@ -24,6 +26,8 @@ Explore the codebase at <path>. Find and read ALL code related to:
 4. Privilege separation — does the code run as root? Drop privileges? Use sandboxing? Fork workers?
 5. Any bypass mechanisms (dev-only modes, test helpers, setup flows, debug flags)
 Return the trust model: who are the actors, what can each do by design, and which code enforces it. Include specific file paths and line numbers.
+
+<repo intelligence tools instructions>
 ```
 
 **Agent 1c: Input surface inventory**
@@ -36,6 +40,8 @@ Explore the codebase at <path>. Produce a complete inventory of where external i
 5. External integrations (OAuth, webhooks, third-party APIs, plugin loading, dynamic code execution)
 6. All places where input reaches dangerous sinks (SQL/query builders, HTML/template output, file paths, shell commands, deserialization, eval, dynamic imports)
 Return specific file paths. Be exhaustive.
+
+<repo intelligence tools instructions>
 ```
 
 Collect all three agents' outputs and synthesize them into `<output-dir>/architecture.md`:

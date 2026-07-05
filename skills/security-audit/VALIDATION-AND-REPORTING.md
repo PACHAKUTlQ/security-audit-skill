@@ -24,6 +24,8 @@ Tell each validation agent:
 Your job is to DISPROVE this finding. Read the actual source code at every step. If you cannot disprove it, confirm it with the exact code that makes it exploitable. Return one of:
 - "CONFIRMED: [explanation of why it's real, with code evidence]"
 - "REJECTED: [explanation of what the finding got wrong, with code evidence]"
+
+<repo intelligence tools instructions>
 ```
 
 **Kill false positives aggressively, but don't kill real findings.** A short report with 3 real findings is worth more than a long report with 30 theoretical ones. An honest "nothing found" is valid — but push hard before reaching that conclusion.

@@ -99,3 +99,27 @@ These are the mistakes that make security audits useless:
 8. **Constructing exploits from incorrect parser/runtime assumptions.** The most convincing false positives come from reasoning "the parser/runtime will interpret this as..." without verifying. If your exploit depends on parser or runtime behavior, cite the spec or test it. Don't assume.
 9. **Skipping business logic and creative attacks.** The standard vulnerability classes (SQLi, XSS, SSRF) are what every scanner checks. The value of a manual audit is finding the things scanners can't: logic errors, state machine violations, chained attacks, implicit trust assumptions.
 10. **Giving up too easily.** "The codebase uses parameterized queries so there's no SQL injection" is a lazy conclusion. Check EVERY use of sql.raw(). Check dynamic identifiers. Check search/FTS. Check if there's a code path that bypasses the query builder. Push.
+
+## Repository intelligence tools
+
+The target environment provides repository-intelligence tools to be used when the task requires codebase exploration, relationship analysis, data-flow reasoning, call/definition lookup, impact analysis, or broad vulnerability hunting.
+
+Available tools:
+
+- `gitnexus` is installed and available directly as a command. This is AST-based code search+code text embedding+code graph.
+- Do not invoke gitnexus through `npx`.
+- Do not use MCP-specific access paths of gitnexus.
+- The repository has already been analyzed with `gitnexus analyze --force --embeddings --skills`. Do not rerun repository analysis.
+- Use the gitnexus-generated skills and output to understand available commands, indexes, semantic search, graph search, call relationships, definitions, references, and impact analysis.
+- `ast-grep` is also installed and you can use it for syntax-aware searches. This is for simple AST-based queries that normal grep cannot cover: **do not** use complex `ast-grep` syntax because you can make mistakes without documentation provided.
+
+### Subagent propagation requirement:
+
+Whenever launching a subagent in any phase, the prompt for the subagent MUST include the above Repository intelligence tools section. Subagents do not know about the above tool instructions unless they are told in prompt when spawned.
+
+## Execution constraints
+
+- This is a static audit.
+- Do not require writing a PoC or exploit to validate a finding.
+- Do not run the code.
+- Do not use `curl` or `git`.

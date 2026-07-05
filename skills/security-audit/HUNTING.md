@@ -14,6 +14,7 @@ Every agent prompt MUST include:
 3. Relevant file paths from Phase 1 as starting points
 4. The hunting methodology (below)
 5. The validation rules (below)
+6. The Repository intelligence tools instructions from `SKILL.md`, including the requirement to use gitnexus for exploration, relationship analysis, call/definition lookup, reachability, impact analysis, etc.
 
 #### Hunting methodology — include in every Phase 2 agent prompt
 
@@ -27,6 +28,8 @@ Don't just check if defenses exist. Try to break them.
 READ THE CODE AT DEPTH. Don't stop at the first function. Follow the data through
 every layer — from the entry point through validation, transformation, storage, retrieval,
 and output. Bugs live in the gaps between layers.
+
+Do not try to read every code file, which is impossible. Think about what you should look for. You can use the repository-intelligence tools.
 
 Think about these angles:
 
