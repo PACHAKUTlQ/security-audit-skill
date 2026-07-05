@@ -114,8 +114,9 @@ Available tools:
 - The repository has already been analyzed with `gitnexus analyze --force --embeddings --skills`. Do not rerun repository analysis.
 - Use the gitnexus-generated skills and output to understand available commands, indexes, semantic search, graph search, call relationships, definitions, references, and impact analysis.
 - `ast-grep` is also installed and you can use it for syntax-aware searches. This is for simple AST-based queries that normal grep cannot cover: **do not** use complex `ast-grep` syntax because you can make mistakes without documentation provided.
+- You are not recommended to use gitnexus only. gitnexus is most powerful when you are analyzing complex code base, code impact, bug trace, semantic search. If search keywords are determined or obviously another tool (e.g. your built-in grep tool) is more suitable, using gitnexus might give you more tedious or even worse results. Use appropriate tools.
 
-### Subagent propagation requirement:
+### Subagent propagation requirement
 
 Whenever launching a subagent in any phase, the prompt for the subagent MUST include the above Repository intelligence tools section. Subagents do not know about the above tool instructions unless they are told in prompt when spawned.
 
