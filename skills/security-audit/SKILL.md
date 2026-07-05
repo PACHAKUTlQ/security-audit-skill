@@ -32,7 +32,7 @@ All files written during the audit go in the output directory:
 - `FINDINGS-DETAIL.md` — detailed data flows for MEDIUM+ findings (Phase 4)
 - `findings.json` — machine-readable structured output (Phase 5)
 
-Subagents (Phases 2, 3, 6) do NOT write files — they return results to you via the Task tool. You are responsible for writing all files to the output directory.
+Subagents (Phases 2, 3) do NOT write files — they return results to you via the Task tool. You are responsible for writing all files to the output directory.
 
 ### Coverage and prior runs
 
