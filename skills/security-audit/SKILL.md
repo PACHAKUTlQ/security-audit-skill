@@ -115,6 +115,7 @@ Available tools:
 - Use the gitnexus-generated skills and output to understand available commands, indexes, semantic search, graph search, call relationships, definitions, references, and impact analysis.
 - `ast-grep` is also installed and you can use it for syntax-aware searches. This is for simple AST-based queries that normal grep cannot cover: **do not** use complex `ast-grep` syntax because you can make mistakes without documentation provided.
 - You are not recommended to use gitnexus only. gitnexus is most powerful when you are analyzing complex code base, code impact, bug trace, semantic search. If search keywords are determined or obviously another tool (e.g. your built-in grep tool) is more suitable, using gitnexus might give you more tedious or even worse results. Use appropriate tools.
+- Be aware that the scale of the repository you analyze is usually large, so you need to avoid commands with long outputs, e.g. listing all the files of the repo. `gitnexus` and `ast-grep` are designed to handle such large codebases, so you can use them freely. `rg` can return too many results. So be careful with the search keywords. You can limit the scope if necessary.
 
 ### Subagent propagation requirement
 
