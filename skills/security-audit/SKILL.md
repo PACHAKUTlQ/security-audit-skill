@@ -124,6 +124,7 @@ Whenever launching a subagent in any phase, the prompt for the subagent MUST inc
 ## Execution constraints
 
 - This is a static audit.
-- Do not require writing a PoC or exploit to validate a finding.
+- Do not write a PoC or exploit to validate a finding.
 - Do not run the code.
 - Do not use `curl` or `git`.
+- Do not modify the code / fix the vulnerabilities.
