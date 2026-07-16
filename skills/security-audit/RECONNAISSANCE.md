@@ -2,7 +2,14 @@
 
 ### Phase 1: Understand the application
 
-Before looking for bugs, understand what you're auditing. This requires depth, not just a directory listing. Launch **multiple `research` agents in parallel** to map different aspects of the codebase:
+Before looking for bugs, understand what you're auditing. This requires depth, not just a directory listing. Launch **multiple `research` agents in parallel** to map different aspects of the codebase.
+
+You are **REQUIRED** to rely on subagents rather than yourself. You are forbidden to:
+
+- Poll for subagent status. You will be invoked when all the agents finish.
+- Do the investigation yourself.
+- Interrupt subagents.
+- Ignore subagent and proceed.
 
 **Agent 1a: Overview, tech stack, and comparable baseline**
 
